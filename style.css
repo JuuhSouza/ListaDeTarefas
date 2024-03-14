@@ -1,0 +1,137 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    min-height: 100vh;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   text-align: center;
+   align-items: center;
+   background-color: #F2C335;
+   background-image: url(img/fundo\ amarelo.gif);
+   background-repeat: no-repeat;
+   background-position: fixed;
+
+}
+
+h3{
+    font-size: 3em;
+    color: #479BBF;
+    text-shadow:2px 1px 3px rgb(4, 4, 4);
+    box-shadow: 2px 2px 2px #479BBF;
+
+}
+
+/* tutorial do youtube  efeito water*/
+
+.content{
+    position: relative;
+    margin-top: 5em;
+   text-align: center;
+}
+
+.content h2 {
+    position: absolute;
+    transform: translate(-50%,-50%);
+    font-size: 6em;
+}
+
+.content h2:nth-child(1){
+    color: #000000;
+    -webkit-text-stroke: 3px #000000;
+
+}
+
+.content h2:nth-child(2){
+    color: #479BBF;
+    z-index: 2;
+    animation: animate 4s ease-in-out infinite;
+}
+
+@keyframes animate{
+    0%,100%{
+        clip-path: polygon(1% 42%, 13% 54%, 27% 62%, 42% 61%, 56% 54%, 71% 45%, 82% 36%, 100% 34%, 99% 99%, 1% 100%);
+    }
+    50%{
+ clip-path: polygon(1% 42%, 15% 37%, 26% 39%, 42% 51%, 56% 53%, 74% 59%, 86% 54%, 100% 48%, 99% 99%, 1% 100%);
+    }
+
+
+}
+
+/* final */
+
+#taskInput{
+    box-shadow: 2px 4px 2px 2px black;
+    margin: 1em auto;
+    font-size: 1.2em;
+    align-items: center;
+    border-radius: 2em;
+    padding: 1em;
+    margin-bottom: 10px;
+    padding: 1.5em;
+
+    
+}
+
+#taskList{
+    list-style-type: none;
+    padding: 1em;
+    
+    
+}
+
+.taskItem{
+    margin-bottom: 5px;
+    box-shadow: 2px 1px 2px  #479BBF;
+    display: flex;
+    flex-direction: column;
+
+
+}
+
+.taskItem button{
+    text-align: center;
+    margin: 1em ;
+    background-color: #FF3049;
+}
+
+button{
+    background-color: #479BBF;
+    box-shadow: 2px 4px 2px black;
+    color: aliceblue;
+    border-radius: 2em 2%;
+    padding: 10px;
+    margin: 1em;
+    align-items: center;
+    transition: all 0.2s ease-in-out; 
+
+}
+
+button:hover{
+    filter: opacity(50%);
+   
+}
+
+li{
+    font-size: 1.4em;
+}
+   
+footer{
+    font-size: 1.2em;
+    font-family: fonte;
+    box-shadow: 2px 2px 40px #000000 ;
+    background-color: #479BBF;
+    margin: 1em;
+    margin-top: 30em;
+    padding: 1em;
+    border-radius:2em ;
+    color: aliceblue;
+   
+  
+    
+}

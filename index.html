@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet">
+    <link rel="shortcut icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVJntksKr9cKXgW2iDMRwfftB72U_XGwvbSA&usqp=CAU">
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarefas</title>
+</head>
+<body>
+
+    <h3>Faça suas anotações de tarefas aqui:</h3>
+     
+    <div class="content">
+        <h2> Tarefas</h2>
+        <h2> Tarefas</h2>
+
+        <input maxlength="90" type="text" id="taskInput" placeholder="Digite uma Tarefa">
+    
+        <button onclick="addTask()"><span class="material-icons">
+            add
+            </span></button>
+        
+    
+        <ul id="taskList">
+            
+            <!-- lista de tarefas sera inserido aq -->
+        </ul>
+    
+    </div>
+
+    
+    
+        <script>
+            function addTask(){
+                var taskInput = document.getElementById("taskInput");
+                var tasktext = taskInput.value.trim();
+    
+                if (tasktext !== "") {
+                    var taskList = document.getElementById("taskList");
+                    var li = document.createElement("li");
+                    li.className = "taskItem";
+                    li.innerHTML = tasktext + '<button onclick="removeTask(this)"><span class="material-icons">delete</span></button>';
+                    taskList.appendChild(li);
+                    taskInput.value = "";
+                } else{
+                    alert("por favor, insira uma tarefa válida.");
+    
+                }
+            }
+    
+            function removeTask(button){
+                var li = button.parentNode;
+                var ul = li.parentNode;
+                ul.removeChild(li);
+            }
+
+            document.getElementById("taskInput").addEventListener("keypress", function (event) {
+            if (event.key === "Enter") {
+                addTask();
+            }
+        });
+            
+    
+        </script>
+
+
+    <footer>
+        Desenvolvido por Júlia Souza | 2024 &copy;
+        
+    </footer>
+
+    </body>
+    </html>
+    
